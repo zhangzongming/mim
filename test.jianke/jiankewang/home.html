@@ -7,14 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="./js/jquery-3.4.1.js"></script>
-    <script src="./js/home.js"></script>
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="./jqBanner.css">
+    <!-- <link rel="stylesheet" href="./css/jqBanner1.css"> -->
+    <link rel="shortcut icon" href="./img/favicon-20190802035623955.ico">
+    <script src="./js/home.js"></script>
+    <script src="./jqBanner.js"></script>
+    <script src="./sever/main.json"></script>
     <link rel="stylesheet" href="css/home.css">
-    
+
 </head>
 
 <body>
-    <div id="jianke">
+    <section id="jianke">
         <header class="z_header">
             <div class="container clear">
                 <a class="huan">欢迎来到健客网上药店！</a>
@@ -36,23 +41,156 @@
                             <a href="#">支付方式</a>
                             <a href="#">售后服务</a>
                         </div>
-                        
+
                     </li>
                     <li class="list1">
-                    <p><i></i> <a href="#">购物车<em>0</em>件</a></p>    
+                        <p><i></i> <a href="#">购物车<em>0</em>件</a></p>
                     </li>
                     <li class="list2">
-                       <p class="list2-p"><i></i><a href="">网站导航</a></p> </li>
+                        <p class="list2-p"><i></i><a href="">网站导航</a>
+
+                        </p>
+                    </li>
                     <li class="list3">
-                        <p><i></i><a href="#">手机版</a><span></span></p>    
+                        <p><i></i><a href="#">手机版</a><span></span></p>
                     </li>
                 </ul>
-                    <div class="list2-erji">
-                        
-                    </div>
+                <span class="list2-erji">
+                    <ul class="box1">
+                        <!-- <li>
+            <dl></dl>
+            <dt></dt>
+        </li> -->
+                    </ul>
+
+
+                </span>
             </div>
         </header>
-    </div>
+
+        <div class="top">
+            <div class="container clear">
+                <h1 class="fl">
+                    <img src="./img/logo.png" alt="">
+                </h1>
+                <div class="fl text1p">
+                    <input class="fl" id="text1" type="text" value="德国伟哥艾力" autocomplete="off"
+                        onfocus="if(this.value == '德国伟哥艾力'){this.value =''}"
+                        onblur="if(this.value ==''){this.value = '德国伟哥艾力'}">
+                    <em></em>
+                    <span class="oBtn">搜索</span>
+                    <dl>
+                        <dd>热门搜索：</dd>
+                        <dd>金戈</dd>
+                        <dd>韦立得</dd>
+                        <dd>艾丽</dd>
+                        <dd>必利劲</dd>
+                        <dd>安宫牛黄丸</dd>
+                    </dl>
+                </div>
+                <div class="logistics fl">
+                    <p class="fl">综合搜索</p>
+                    <ul class="fl">
+                        <li>
+                            <em></em>
+                            <a href="#">物流查询</a></li>
+                        <li>
+                            <em></em> <a href="#">我的订单</a></li>
+                    </ul>
+                </div>
+                <div class="fr erweima"><img src="./img/erweima.png" alt=""></div>
+
+                <div class="top_bottom fl">
+                    <ul class="nav1 fl">
+                        <li><a href="#">互联网交易资格证：粤C20130016</a></li>
+                        <li><a href="#">药品经营许可证：粤BA0200208</a></li>
+                        <li><a href="#">医疗器械经营许可证</a></li>
+                        <li><a href="#">粤穗食药监械经营许20170856号</a></li>
+                        <li><a href="#">第二类医疗器械经营备案凭证</a></li>
+                        <li><a href="#">粤穗食药监械经营备LG20150061号</a></li>
+                    </ul>
+
+                </div>
+                <div class="top_footer fl">
+                    <h2>全部产品分类</h2>
+                    <ul>
+                        <li><em></em><a href="">消灭丙肝</a></li>
+                        <li><em></em><a href="">男科频道</a></li>
+                        <li><a href="">无痛测糖</a></li>
+                        <li><a href="">保健商城
+                            </a></li>
+                        <li> <a href=""> 健康问答</a></li>
+                        <li><a href="">减肥瘦身</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cebian">
+            <img src="./img/cebian.png" alt="">
+
+        </div>
+        <div class="banner">
+
+
+            <div class="container">
+                <div class="nav2 fl">
+                    <ul class="fl">
+
+                    </ul>
+                </div>
+                <!-- 轮播图 -->
+                <div class="box2 fl">
+
+                </div>
+
+                <div class="banner1 fl">
+                    <img src="./img/jk_06.jpg" alt="">
+                    <ul class="nav3">
+                        <li><span><i></i><a href="#">健康问答</a></span></li>
+                        <li><span><i></i><a href="#">用药指导</a></span></li>
+                        <li><span><i></i><a href="#">健康资讯</a></span></li>
+                        <li><span><i></i><a href="#">找医生</a></span></li>
+                    </ul>
+                    <div>
+                        <h3>健康快报</h3><span class="fr">更多</span><i class="fr"></i>
+                    </div>
+                    <ul class="nav4">
+                        <li><span>【公告】</span>健客与北京同仁堂股份（集团）强强联手 探索“医+药”互联网医疗新模式助力中成药发展</li>
+                        <li><span>【公告】</span>年度中国连锁药店综合实力百强榜发布 健客再获殊荣</li>
+                        <li><span>【公告】</span>荣膺第八届中国财经峰会最具成长价值奖 健客以创新驱动助推企业发展</li>
+                        <li><span>【公告】</span>东莞市谢岗镇党政代表团考察图市人民医院健客互联网医院智慧医疗中心</li>
+                        <li><span>【公告】</span>健客省人民医院店顺利通</li>
+                    </ul>
+                </div>
+
+            </div></div>
+            <div class="main">
+                <div class="container">
+                    <h2>热卖专场</h2>
+                        <ul class="nav5">
+                            <li>
+                               <img class="bigimg" src="./img/11.png" alt="">
+                               <div class="box3">
+                                    <div class="box3-1">
+                                         <h3></h3> 
+                                         <p></p>  
+                                    </div>
+                               </div>
+                                <dl>
+                                    <dt></dt>
+                                    <h4></h4>
+                                    <dd></dd>
+                                </dl>
+
+                            </li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                </div>
+            </div>
+        
+    </section>
 </body>
 
 </html>
