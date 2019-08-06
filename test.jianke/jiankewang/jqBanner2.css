@@ -6,7 +6,7 @@
 .slider {
     width: 700px;
     height: 350px;
-    background: #ccc;
+    /* background: #ccc; */
     overflow: hidden;
     position: relative;
     /* border: 5px solid #fff; */
@@ -45,7 +45,7 @@
     top: 50%;
     margin-top: -22.5px;
     color: #fff;
-    background: rgba(204, 204, 204, .6);
+    /* background: rgba(204, 204, 204, .6); */
     font-size: 38px;
     text-align: center;
 }
@@ -70,7 +70,7 @@
     width: 20px;
     height: 20px;
     line-height: 20px;
-    background: #979797;
+    /* background: #979797; */
     z-index: 5;
     text-align: center;
     font-size: 14px;
@@ -80,9 +80,9 @@
     margin-left: 10px;
 }
 
-.slider_nav span.active {
+/* .slider_nav span.active {
     background: #f69c09;
-}
+} */
 
 /* 禁止文本选中 */
 .cus-text {

@@ -3,10 +3,10 @@
     padding: 0;
 }
 
-.slider {
+  .slider {
     width: 810px;
     height: 510px;
-    background: #ccc;
+    /* background: #ccc; */
     overflow: hidden;
     position: relative;
     /* border: 5px solid #fff;
@@ -45,7 +45,7 @@
     top: 50%;
     margin-top: -22.5px;
     color: #fff;
-    background: rgba(204, 204, 204, .6);
+    /* background: rgba(204, 204, 204, .6); */
     font-size: 38px;
     text-align: center;
 }

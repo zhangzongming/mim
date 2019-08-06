@@ -81,28 +81,72 @@ $(function () {
         $('.list2-p').css('background', '#f5f5f5');
     })
 
-    $.ajax({
-        type: "get",
-        url: "Control.json",
-        dataType: "json",
-        success: function (data) {
-            console.log(data);
-            let html = data.map(function (item) {
-                let str = item.model.map(function (value) {
-                    return `<dd>${value}</dd>`
-                }).join("");
-                return `<li>
-                <dl>
-                    <dt>${item.name}</dt>
-                </dl>
-                <dl>
-                    ${str}
-                </dl>
-            </li>`
-            }).join('');
-            $('.nav2').children().html(html);
-        }
+    function init() {
+        $.ajax({
+            type: "get",
+            url: "Control.json",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                let html = data.map(function (item) {
+                    let str = item.model.map(function (value) {
+                        return `<dd>${value}</dd>`
+                    }).join("");
+                    let str1 = item.des.map(function (element) {
+                        return `<dd>${element}</dd>`
+                    }).join('');
+                    let str2 = item.product.map(function (value) {
+                        return `<dd>${value}</dd>`
+                    }).join('');
+                    return `<li class="nav2-list">
+                    <dl>
+                        <dt>${item.name}</dt>
+                    </dl>
+                    <dl>
+                        ${str}
+                    </dl>
+                    <ul class="nav2-erji">
+                    <li>
+                        <dl class="nav2-erjidl1">
+                            <dt>${item.andrology}</dt>
+                            ${str1}
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="nav2-erjidl1">
+                            <dt>${item.title}</dt>
+                            ${str2}
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>${item.products}</dt>
+                            <img src="${item.src}" alt="">
+                        </dl>
+                    </li>
+                </ul>
+                </li>`
+                }).join('');
+                $('.nav2').children().html(html);
+            }
+        })
+    }
+    init();
+
+
+    $('.nav2-end').on("mouseenter", ".nav2-list", function () {
+        let ine = $(this).index();
+        let cone = $(this).addClass('conttt').siblings().removeClass('conttt');
+        $(this).children('.nav2-erji').addClass("actve").siblings().removeClass("actve");
     })
+
+    $('.nav2-end').on("mouseleave", ".nav2-list", function () {
+       
+        $(this).children('.nav2-erji').removeClass("actve");
+    })
+
+
+    
 
     //轮播图
     $.ajax({
@@ -111,9 +155,11 @@ $(function () {
         dataType: "json",
         success: function (data) {
 
-            (new BannerManager(data, 'true', 'true', 'true', 1, 1500, 0, $(".box2"))).init();
+            (new BannerManager(data, 'true', 'true', 'true', 1, 2500, 0, $(".box2"))).init();
         }
     })
+
+
 
     $.ajax({
         type: "get",
@@ -153,6 +199,15 @@ $(function () {
         }
     })
 
+    $.ajax({
+        type: "get",
+        url: "./sever/banner1.json",
+        dataType: "json",
+        success: function (data) {
+
+            (new BannerManagero(data, 'false', 'false', 'true', 1, 2500, 0, $(".market-banner2"))).init();
+        }
+    })
     $.ajax({
         type: "get",
         url: "./sever/main1.json",
@@ -211,4 +266,33 @@ $(function () {
             $('.floor').children().html(html);
         }
     })
+    $('.journalism').children().first().addClass('contt');
+    $('.journa-a').first().addClass('current');
+    $('.journalism').children().mouseenter(function () {
+        let idx = $(this).index();
+        let lit = $(this).addClass("contt").siblings().removeClass("contt");
+        $(".journa-a").eq($(this).index()).addClass("current").siblings().removeClass("current");
+    })
+
+
+
+    $('.linkstop').children().first().addClass('active2');
+    $('.linkscont').first().addClass('cont2');
+    $('.linkstop').children().mouseenter(function () {
+        let ine = $(this).index();
+        let cone = $(this).addClass('active2').siblings().removeClass('active2');
+        $('.linkscont').eq($(this).index()).addClass("cont2").siblings().removeClass("cont2");
+    })
+
+    $('.box2-ul').children();
+
+
+    // let timer = setInterval(function(){
+
+    // },2500)
+
+    // .mouseenter(function () {
+    //    console.log($(this));
+    // })
+
 })

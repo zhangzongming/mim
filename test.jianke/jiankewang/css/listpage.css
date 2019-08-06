@@ -1,0 +1,238 @@
+.z_header {
+    width: 100%;
+    background: #f5f5f5;
+}
+
+.z_header .container {
+    color: #aeaeae;
+    position: relative;
+}
+
+.z_header a {
+    line-height: 35px;
+}
+
+.z_header .huan {
+    font-size: 12px;
+    float: left;
+    height: 35px;
+    margin-right: 35px;
+}
+
+.z_header .login {
+    margin-right: 30px;
+    float: left;
+    height: 35px;
+    font-size: 12px;
+}
+
+.z_header .login:hover {
+    color: #0691f9;
+}
+
+.z_header .regin:hover {
+    color: #0691f9;
+}
+
+.z_header .regin {
+    margin-right: 30px;
+    float: left;
+    height: 35px;
+    font-size: 12px;
+}
+
+.z_header .fr {
+    width: 533px;
+}
+
+.z_header .fr li {
+    float: left;
+
+}
+
+.z_header .fr>li a {
+
+    color: #aeaeae;
+    font-size: 12px;
+
+}
+
+.z_header .fr .list {
+    padding: 0px 20px 0px 8px;
+    margin-left: 14px;
+    position: relative;
+
+    /* box-sizing: border-box;
+  */
+}
+
+.z_header .fr li:nth-child(1) {
+    margin-right: 7px;
+}
+
+.z_header .fr .list span {
+    width: 8px;
+    height: 4px;
+    position: absolute;
+    top: 16px;
+    left: 60px;
+    background: url("../img/111.png");
+    background-position: -20px -93px;
+}
+
+.z_header .fr .list3 {
+    padding-left: 10px;
+    position: relative;
+}
+
+.z_header .fr .list3 p {
+    width: 88px;
+    box-sizing: border-box;
+    padding: 0px 20px 0px 13px;
+}
+
+.z_header .fr .list3 span {
+    width: 8px;
+    height: 4px;
+    background: url("../img/111.png");
+    background-position: -20px -93px;
+    position: absolute;
+    left: 80px;
+    top: 16px;
+}
+
+.z_header .fr .list3 i {
+    float: left;
+    width: 10px;
+    height: 16px;
+    margin-top: 10px;
+    margin-right: 6px;
+    background-position: -74px -89px;
+
+}
+
+.z_header .fr li i {
+    background: url("../img/111.png");
+}
+
+.z_header .fr .list1 {
+    padding-left: 11px;
+    padding-right: 8px;
+    position: relative;
+    z-index: 100;
+}
+
+.z_header .fr .list1 i {
+    float: left;
+    margin-right: 5px;
+    margin-top: 11px;
+    width: 20px;
+    height: 16px;
+    background-position: -47px -89px;
+}
+
+.z_header .fr .list2 {
+    padding: 0px 10px 0px 4px;
+}
+
+.z_header .fr .list2 p {
+    width: 86px;
+    height: 35px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.z_header .fr .list2 i {
+    display: inline-block;
+    width: 12px;
+    height: 10px;
+    background-position: -2px -91px;
+    margin-top: 12px;
+    line-height: 35px;
+
+}
+
+.z_header .fr li:hover span {
+    transition: all .1s;
+    transform: rotate(-180deg);
+}
+
+.z_header .fr .list .list-erji {
+    width: 100%;
+    z-index: 999;
+    position: absolute;
+    display: none;
+    left: -1px;
+    top: 34px;
+    background: #fff;
+}
+
+.z_header .fr .list .list-erji a {
+    margin-left: 8px;
+    line-height: 28px;
+}
+
+.z_header .fr .list .list-erji a {
+    width: 100%;
+    display: block;
+}
+
+
+.z_header .fr .list:hover {
+
+    border-top: 1px solid #fff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    height: 34px;
+    padding: 0px 19px 0px 7px;
+}
+
+.z_header .fr .list:hover .list-erji {
+    display: block;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.z_header .fr li a:hover {
+    color: #0691f9;
+}
+
+.z_header .fr li a em {
+    color: orangered;
+}
+
+.z_header .fr .list2 p:hover {
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.z_header .fr .list1:hover {
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding-left: 10px;
+    padding-right: 7px;
+}
+
+.z_header .fr .list3 p:hover {
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.z_header .list2-erji {
+    position: absolute;
+    display: none;
+    width: 1208px;
+    height: 270px;
+    right: 109px;
+    top: 35px;
+    border: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 0px none;
+    padding: 26px 0 28px;
+    background: #fff;
+    z-index: 999;
+}
