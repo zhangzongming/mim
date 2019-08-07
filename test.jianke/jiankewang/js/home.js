@@ -143,6 +143,7 @@ $(function () {
     $('.nav2-end').on("mouseleave", ".nav2-list", function () {
        
         $(this).children('.nav2-erji').removeClass("actve");
+        $(this).addClass('conttt').removeClass("conttt");
     })
 
 

@@ -80,4 +80,109 @@ $(function () {
         $('.list2-erji').css('display', 'none');
         $('.list2-p').css('background', '#f5f5f5');
     })
+
+    function init() {
+        $.ajax({
+            type: "get",
+            url: "Control.json",
+            dataType: "json",
+            success: function (data) {
+
+                let html = data.map(function (item) {
+                    let str = item.model.map(function (value) {
+                        return `<dd>${value}</dd>`
+                    }).join("");
+                    let str1 = item.des.map(function (element) {
+                        return `<dd>${element}</dd>`
+                    }).join('');
+                    let str2 = item.product.map(function (value) {
+                        return `<dd>${value}</dd>`
+                    }).join('');
+                    return `<li class="nav2-list">
+                    <dl>
+                        <dt>${item.name}</dt>
+                    </dl>
+                    <dl>
+                        ${str}
+                    </dl>
+                    <ul class="nav2-erji">
+                    <li>
+                        <dl class="nav2-erjidl1">
+                            <dt>${item.andrology}</dt>
+                            ${str1}
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="nav2-erjidl1">
+                            <dt>${item.title}</dt>
+                            ${str2}
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>${item.products}</dt>
+                            <img src="${item.src}" alt="">
+                        </dl>
+                    </li>
+                </ul>
+                </li>`
+                }).join('');
+                $('.nav2-ul').html(html);
+            }
+        })
+    }
+    init();
+
+    $('.nav2-end').mouseenter(function () {
+        $(this).children("h3").addClass("active");
+        $(this).children('.nav2-ul').addClass("cont");
+    })
+    $('.nav2-end').mouseleave(function () {
+        $(this).children('.nav2-ul').addClass("cont").removeClass('cont');
+        $(this).children("h3").addClass("active").removeClass("active");
+    })
+    $('.nav2-end').on("mouseenter", ".nav2-list", function () {
+        let ine = $(this).index();
+        let cone = $(this).addClass('conttt').siblings().removeClass('conttt');
+        $(this).children('.nav2-erji').addClass("actve").siblings().removeClass("actve");
+    })
+
+    $('.nav2-end').on("mouseleave", ".nav2-list", function () {
+
+        $(this).children('.nav2-erji').removeClass("actve");
+        $(this).addClass('conttt').removeClass("conttt");
+    })
+
+
+    console.log($(".contpage"));
+
+
+    
+
+
+    $.ajax({
+        type: "post",
+        url: "./sever/page.php",
+        dataType: "json",
+        success: function (response) {
+            console.log(response);
+
+            let res = response.data.map(ele => {
+                return `<li>
+                        <img class="bigimg" src="${ele.src}" alt="">
+                        <p><span>${ele.splie}</span><del>${ele.splic}</del></p>
+                        <div class="pagelistp">
+                            <p><img src="./img/100.jpg" alt="">${ele.des}</p>
+                            <span class="xiang">${ele.splie}</span>
+                        </div>
+                    </li>`
+
+
+            }).join("");
+            $(".contpage").html(res);
+        }
+    });
+
+
+
 })

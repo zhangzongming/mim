@@ -5,14 +5,15 @@
  $data = file_get_contents("../liebiao.json");
  $arr = json_decode($data,true);
  
+
  for($i=0;$i<count($arr);$i++){
      $src = $arr[$i]["src"];
     $splie = $arr[$i]["splie"];
     $splic = $arr[$i]["splic"];
     $des = $arr[$i]["des"];
-     $sql = "INSERT INTO `liebiao`(`123`, `234`, `24`, `22`) VALUES ('$src','$splie','$splic','$des')";
-    
-    
+    $model = $arr[$i]["model"];
+     $sql = "INSERT INTO `pagelist` (`src`, `splie`, `splic`, `des`,`model`) VALUES ('$src','$splie','$splic','$des','$model')";
+   
      mysqli_query($con,$sql);
  }
 
