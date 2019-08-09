@@ -13,13 +13,13 @@
 /* 参数2：用户名 */
 /* 参数3：密码 */
 /* 参数4：数据库名字 */
-$db = mysqli_connect("127.0.0.1","root","root","webdata");
+$db = mysqli_connect("127.0.0.1","root","","datalist");
 
 $username = $_REQUEST["username"];
-$password = $_REQUEST["password"];
 $phone = $_REQUEST["phone"];
-
-$sql = "INSERT INTO `userList` (`username`, `password`, `phone`) VALUES ('$username', '$password', '$phone')";
+$password = $_REQUEST["password"];
+// echo $phone;
+$sql = "INSERT INTO `reeg` (`username`, `phone`, `password`) VALUES ('$username', '$phone', '$password')";
 $result = mysqli_query($db, $sql);
 
 // #bool(false)  | bool(true)
@@ -30,6 +30,7 @@ $result = mysqli_query($db, $sql);
 $data = array("status"=>"", "msg"=>"", "data"=>"");
 if($result)
 {
+  $data["data"] = "200";
   $data["status"] = "success";
   $data["msg"] = "恭喜你，注册成功！";
 }else{

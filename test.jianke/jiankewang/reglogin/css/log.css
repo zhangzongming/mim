@@ -1,0 +1,15 @@
+ #app .form-item1 {
+     display: none;
+ }
+
+ #app .form-item1.cont {
+     display: block;
+ }
+ /* #app #phone1{
+     float:left;
+ }
+ #app #gain{
+     width:100px;
+     height:20px;
+     float:left;
+ } */

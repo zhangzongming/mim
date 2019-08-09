@@ -3,7 +3,7 @@ $(function () {
         $('.list2-erji').css('display', 'block');
         $.ajax({
             type: "get",
-            url: "home.json",
+            url: "./sever/page.json",
             dataType: "json",
             success: function (data) {
                 console.log(data);
@@ -45,8 +45,8 @@ $(function () {
                 $('.dd1').css('font-size', '12px');
                 $('.dd1').css('color', '#000');
                 $('.lis1').first().css('border-left', '0px');
-                $('.lis1').first().css('width', '570px');
-                $('.lis1').first().next().css('width', '340px');
+                $('.lis1').first().css('width', '380px');
+                $('.lis1').first().next().css('width', '320px');
                 $('.lis1').first().next().css('border-left', '1px solid #ccc');
                 $('.dd1').children().mouseenter(function () {
                     $(this).css('background', '#0691f9');
@@ -152,51 +152,4 @@ $(function () {
         $(this).children('.nav2-erji').removeClass("actve");
         $(this).addClass('conttt').removeClass("conttt");
     })
-
-
-    console.log($(".contpage"));
-
-
-
-
-
-    $.ajax({
-        type: "post",
-        url: "./sever/page.php",
-        dataType: "json",
-        success: function (response) {
-            console.log(response);
-
-            let res = response.data.map(ele => {
-                return `<li class=listli>
-                        <img class="bigimg" src="${ele.src}" alt="">
-                        <p><span>${ele.splie}</span><del>${ele.splic}</del></p>
-                        <div class="pagelistp">
-                            <p><img src="./img/100.jpg" alt="">${ele.des}</p>
-                            <span class="xiang">${ele.splie}</span>
-                        </div>
-                    </li>`
-
-
-            }).join("");
-            $(".contpage").html(res);
-
-            var list = document.querySelectorAll(".listli");
-            console.log(list);
-            for (var i = 0; i < list.length; i++) {
-                list[i].index = i;
-                list[i].onclick = function () {
-                    console.log(data[this.index]);
-                    var sto = objToStr(data[this.index]);
-                    console.log(sto);
-                    window.location.href = "http://127.0.0.1/tese/mim/test.jianke/jiankewang/reglogin/logg.html";
-                }
-            }
-        }
-
-    });
-
-
-
-
 })
