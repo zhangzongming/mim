@@ -1,4 +1,6 @@
 $(function () {
+
+    var itemData;
     $('.list2-p').mouseenter(function () {
         $('.list2-erji').css('display', 'block');
         $.ajax({
@@ -154,9 +156,6 @@ $(function () {
     })
 
 
-    console.log($(".contpage"));
-
-
 
 
 
@@ -165,38 +164,73 @@ $(function () {
         url: "./sever/page.php",
         dataType: "json",
         success: function (response) {
-            console.log(response);
+            itemData = response;
 
-            let res = response.data.map(ele => {
-                return `<li class=listli>
-                        <img class="bigimg" src="${ele.src}" alt="">
-                        <p><span>${ele.splie}</span><del>${ele.splic}</del></p>
-                        <div class="pagelistp">
-                            <p><img src="./img/100.jpg" alt="">${ele.des}</p>
-                            <span class="xiang">${ele.splie}</span>
+            response.data.forEach((ele,i) => {
+                
+            
+                let classActive = ele.model == '查看详情' ? 'detailPage' : 'trolleyCart';
+
+               let res = `<li data-index=${i}>
+                        <div class='listli'>
+                            <img class="bigimg" src="${ele.src}" alt="">
+                            <p><span>${ele.splie}</span><del class="splic">${ele.splic}</del></p>
+                            <p class="pagelistp"><img src="./img/100.jpg" alt="">${ele.des}</p>
                         </div>
-                    </li>`
+                        <div class="pagelist2">
+                            <span class='${classActive} xiang' style=''>${ele.model}</span>
+                        </div>
+                    </li>`;
+
+                $(".contpage").append(res);
+            })
+            
 
 
-            }).join("");
-            $(".contpage").html(res);
-
-            var list = document.querySelectorAll(".listli");
-            console.log(list);
-            for (var i = 0; i < list.length; i++) {
-                list[i].index = i;
-                list[i].onclick = function () {
-                    console.log(data[this.index]);
-                    var sto = objToStr(data[this.index]);
-                    console.log(sto);
-                    window.location.href = "http://127.0.0.1/tese/mim/test.jianke/jiankewang/reglogin/logg.html";
-                }
-            }
         }
 
     });
 
+    $(".contpage").on("click", ".detailPage", function () {
+        window.location.href = `http://127.0.0.1/tese/mim/test.jianke/jiankewang/page.html?`;
+    })
+
+    $(".contpage").on("click", ".listli", function () {
+
+        var mark = $(this).children("p").children(".splic").text();
+        window.location.href = `http://127.0.0.1/tese/mim/test.jianke/jiankewang/page.html?id=${mark}`;
+    })
 
 
+        
+        // console.log(itemData.data[index].splie);
+    //     console.log(itemData.data[index].id);
+    // console.log($("#catShow"));
+    /*添加到购物车功能*/
+    $(".contpage").on("click", ".trolleyCart", function () {
+        /* 发送网络请求给服务器 */
+        /* 向购物车表单中添加一条数据 */
+        /* 购物车表单--- carID 商品ID 数量 小计  */
+        /* 获取当前选中商品的id，把该id作为参数提交给服务器，服务器接收到请求后执行+1操作 */
 
+        /* INSERT INTO `cat` (`catID`, `id`, `num`, `total`) VALUES ('1', '1', '2', '100'); */
+        // console.log();
+        var index = $(this).parent().parent().data("index");
+        // console.log(index);
+       let splie = itemData.data[index].splie.slice(1,-1);
+       console.log(splie);
+        $.ajax({
+            type: "get",
+            data: `id=${itemData.data[index].id}&price=${splie}`,
+            url: "./php/cart.php",
+            dataType: "json",
+            success: function (response) {
+                if (response.status == "success") {
+                    console.log("添加成功");
+                    console.log(response);
+                    $("#catShow").html(response.data.count)
+                }
+            }
+        });
+    })
 })

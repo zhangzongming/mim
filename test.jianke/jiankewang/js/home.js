@@ -130,6 +130,11 @@ $(function () {
                 $('.nav2').children().html(html);
             }
         })
+
+        $('.nav2').on("click", ".nav2-list", function () {
+            window.location.href = `http://127.0.0.1/tese/mim/test.jianke/jiankewang/listpage.html`;
+        })
+    //    $('.nav2').children(".nav2-list").children("ul").children().children().css("cursor","pointer");
     }
     init();
 
@@ -141,13 +146,13 @@ $(function () {
     })
 
     $('.nav2-end').on("mouseleave", ".nav2-list", function () {
-       
+
         $(this).children('.nav2-erji').removeClass("actve");
         $(this).addClass('conttt').removeClass("conttt");
     })
 
 
-    
+
 
     //轮播图
     $.ajax({
@@ -169,7 +174,7 @@ $(function () {
         success: function (data) {
             let html = data.map(function (element) {
 
-                return `<li>
+                return `<li class="lilist">
               <img class="bigimg" src="${element.imgsrc}" alt="">
               <div class="box3">
                    <div class="box3-1">
@@ -200,6 +205,10 @@ $(function () {
         }
     })
 
+    $('.nav5').on("click", ".lilist", function () {
+        window.location.href = `http://127.0.0.1/tese/mim/test.jianke/jiankewang/listpage.html`;
+    })
+    $('.nav5').children()
     $.ajax({
         type: "get",
         url: "./sever/banner1.json",
@@ -287,13 +296,11 @@ $(function () {
 
     $('.box2-ul').children();
 
-
-    // let timer = setInterval(function(){
-
-    // },2500)
-
-    // .mouseenter(function () {
-    //    console.log($(this));
-    // })
+    $('.floor').on("click", ".egimgs", function () {
+        window.location.href = `http://127.0.0.1/tese/mim/test.jianke/jiankewang/listpage.html`;
+    })
+    $('.floor').on("click", ".fgimgs", function () {
+        window.location.href = `http://127.0.0.1/tese/mim/test.jianke/jiankewang/listpage.html`;
+    })
 
 })
